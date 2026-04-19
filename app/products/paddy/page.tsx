@@ -1,8 +1,17 @@
 'use client';
 import { useState } from 'react';
-import { X, CheckCircle2, Calendar, Wheat, ShieldCheck } from 'lucide-react';
+import { X, Calendar, Wheat, ShieldCheck } from 'lucide-react';
 
-const paddyItems = [
+// 1. DEFINE TYPE INTERFACE FOR TYPESCRIPT VALIDATION
+interface PaddyItem {
+  id: number;
+  type: string;
+  name: string;
+  image: string;
+  info: string;
+}
+
+const paddyItems: PaddyItem[] = [
   {
     id: 1,
     type: 'HYBRID PADDY',
@@ -93,14 +102,15 @@ const COLORS = {
 };
 
 export default function PaddyPage() {
-  const [activeItem, setActiveItem] = useState(null);
+  // 2. INITIALIZE STATE WITH TYPE SUPPORT
+  const [activeItem, setActiveItem] = useState<PaddyItem | null>(null);
 
   return (
     <div className="pb-20 bg-[#FBF9F6] min-h-screen">
       {/* Header */}
       <div className="h-64 bg-[#2B5A27] relative flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1530507629858-e4977d30e9e0?q=80&w=2000')] bg-cover bg-center opacity-20"></div>
-        <h1 className="relative z-10 text-white text-5xl font-black uppercase tracking-tighter">
+        <h1 className="relative z-10 text-white text-4xl md:text-5xl font-black uppercase tracking-tighter">
           Paddy Varieties
         </h1>
       </div>
@@ -129,7 +139,7 @@ export default function PaddyPage() {
                 </span>
                 <p
                   style={{ color: COLORS.green }}
-                  className="font-bold text-xs leading-tight uppercase"
+                  className="font-black text-[11px] leading-tight uppercase"
                 >
                   {item.name}
                 </p>
@@ -145,27 +155,25 @@ export default function PaddyPage() {
       {/* TECHNICAL SPOTLIGHT MODAL */}
       {activeItem && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-10">
-          {/* Backdrop */}
           <div
             className="absolute inset-0 bg-[#2B5A27]/90 backdrop-blur-md"
             onClick={() => setActiveItem(null)}
           ></div>
 
-          {/* Modal Content */}
-          <div className="relative bg-white w-full max-w-5xl rounded-[4rem] shadow-2xl overflow-hidden flex flex-col md:flex-row items-stretch animate-in zoom-in fade-in duration-300">
+          <div className="relative bg-white w-full max-w-5xl rounded-[3rem] md:rounded-[4rem] shadow-2xl overflow-hidden flex flex-col md:flex-row items-stretch animate-in zoom-in fade-in duration-300 max-h-[90vh] overflow-y-auto md:overflow-hidden">
             <button
               onClick={() => setActiveItem(null)}
-              className="absolute top-8 right-8 z-10 p-2 bg-stone-100 rounded-full hover:bg-stone-200 transition"
+              className="absolute top-6 right-6 md:top-8 md:right-8 z-10 p-2 bg-stone-100 rounded-full hover:bg-stone-200 transition"
             >
               <X size={24} style={{ color: COLORS.green }} />
             </button>
 
             {/* Left: Product Visual */}
-            <div className="md:w-1/2 bg-[#FBF9F6] p-12 flex flex-col items-center justify-center border-r border-stone-100">
+            <div className="md:w-1/2 bg-[#FBF9F6] p-8 md:p-12 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-stone-100">
               <img
                 src={activeItem.image}
                 alt={activeItem.name}
-                className="h-96 w-auto object-contain drop-shadow-2xl"
+                className="h-64 md:h-96 w-auto object-contain drop-shadow-2xl"
               />
               <div
                 style={{ backgroundColor: COLORS.gold }}
@@ -174,24 +182,24 @@ export default function PaddyPage() {
             </div>
 
             {/* Right: Detailed Specs */}
-            <div className="flex-1 p-10 md:p-16 flex flex-col justify-center">
+            <div className="flex-1 p-8 md:p-16 flex flex-col justify-center">
               <span
                 style={{ color: COLORS.gold }}
-                className="font-black uppercase tracking-[0.3em] text-xs mb-2"
+                className="font-black uppercase tracking-[0.3em] text-[10px] mb-2"
               >
                 Paddy Specification
               </span>
               <h2
                 style={{ color: COLORS.green }}
-                className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-8"
+                className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-8"
               >
                 {activeItem.name}
               </h2>
 
-              <div className="space-y-6">
+              <div className="space-y-4 md:space-y-6">
                 {activeItem.info.split('|').map((spec, i) => (
                   <div key={i} className="flex items-center gap-4 group">
-                    <div className="bg-stone-50 p-2 rounded-lg group-hover:bg-[#BF9B30]/10 transition">
+                    <div className="bg-stone-50 p-2 rounded-lg group-hover:bg-[#BF9B30]/10 transition shrink-0">
                       {i === 0 ? (
                         <Calendar size={18} style={{ color: COLORS.gold }} />
                       ) : i === 1 ? (
@@ -200,23 +208,23 @@ export default function PaddyPage() {
                         <ShieldCheck size={18} style={{ color: COLORS.gold }} />
                       )}
                     </div>
-                    <span className="text-stone-600 font-bold uppercase tracking-wide text-sm">
+                    <span className="text-stone-600 font-bold uppercase tracking-wide text-xs md:text-sm">
                       {spec.trim()}
                     </span>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-12 flex gap-4">
+              <div className="mt-10 md:mt-12 flex flex-col md:flex-row gap-4">
                 <button
                   style={{ backgroundColor: COLORS.red }}
-                  className="flex-1 text-white py-4 rounded-2xl font-black uppercase tracking-widest text-xs hover:shadow-xl transition"
+                  className="flex-1 text-white py-4 rounded-2xl font-black uppercase tracking-widest text-[10px] hover:shadow-xl transition active:scale-95"
                 >
                   Request Quote
                 </button>
                 <button
                   onClick={() => setActiveItem(null)}
-                  className="px-8 border-2 border-stone-200 rounded-2xl font-black uppercase tracking-widest text-xs text-stone-400 hover:border-[#2B5A27] hover:text-[#2B5A27] transition"
+                  className="px-8 py-4 border-2 border-stone-200 rounded-2xl font-black uppercase tracking-widest text-[10px] text-stone-400 hover:border-[#2B5A27] hover:text-[#2B5A27] transition"
                 >
                   Close
                 </button>
