@@ -38,7 +38,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden lg:flex gap-10 items-center font-black text-gray-800 uppercase text-[12px] tracking-widest">
+        <div className="flex gap-4 md:gap-10 items-center font-black text-gray-800 uppercase text-[9px] md:text-[12px] tracking-widest">
           <Link href="/" className="hover:text-[#2B5A27] transition">
             Home
           </Link>
