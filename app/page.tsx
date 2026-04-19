@@ -141,26 +141,41 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. WHY CHOOSE US */}
-      <section className="py-20 px-6 max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-6">
-          <FeatureCard
-            icon={<ShieldCheck size={32} />}
-            title="Quality"
-            desc="Finest seeds for our farmers."
-          />
-          <FeatureCard
-            icon={<TrendingUp size={32} />}
-            title="Better Yields"
-            desc="Scientific research for maximum output."
-          />
-          <FeatureCard
-            icon={<Users size={32} />}
-            title="Farmer&apos;s Trust"
-            desc="Treating every seed like a promise."
-          />
-        </div>
-      </section>
+{/* 2. WHY CHOOSE US - STYLIZED VERSION */}
+<section className="py-24 px-6 max-w-7xl mx-auto relative">
+  {/* Background Decorative Element */}
+  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-full bg-[#BF9B30]/5 blur-[120px] rounded-full -z-10"></div>
+
+  <div className="text-center mb-16 space-y-4">
+    <span style={{ color: COLORS.gold }} className="text-[10px] font-black uppercase tracking-[0.4em]">
+      The Annapurna Advantage
+    </span>
+    <h2 style={{ color: COLORS.green }} className="text-4xl md:text-5xl font-black uppercase tracking-tighter">
+      Why Farmers <span style={{ color: COLORS.gold }}>Choose Us</span>
+    </h2>
+  </div>
+
+  <div className="grid md:grid-cols-3 gap-8">
+    <FeatureCard
+      icon={<ShieldCheck size={40} />}
+      title="Unmatched Quality"
+      desc="Every batch undergoes rigorous 7-layer testing to ensure only the finest seeds reach your soil."
+      tag="Certified"
+    />
+    <FeatureCard
+      icon={<TrendingUp size={40} />}
+      title="Superior Yields"
+      desc="Driven by scientific R&amp;D to deliver up to 30% higher output than standard local varieties."
+      tag="Research-Led"
+    />
+    <FeatureCard
+      icon={<Users size={40} />}
+      title="Farmer&apos;s Legacy"
+      desc="Built on 25+ years of trust, treating every single seed like a sacred promise of prosperity."
+      tag="Trusted"
+    />
+  </div>
+</section>
 
       {/* 3. MISSION SECTION - (The one you liked!) */}
       <section className="max-w-7xl mx-auto py-12 px-6">
@@ -290,23 +305,42 @@ export default function HomePage() {
   );
 }
 
-function FeatureCard({ icon, title, desc }: any) {
+// --- Update the FeatureCard component below ---
+
+function FeatureCard({ icon, title, desc, tag }: any) {
   return (
-    <div className="p-8 rounded-[2.5rem] bg-white border border-stone-100 hover:border-[#BF9B30] transition-all group shadow-sm flex items-center gap-5">
-      <div style={{ color: COLORS.gold }} className="shrink-0">
+    <div className="group relative p-10 rounded-[3rem] bg-white border border-stone-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_60px_-10px_rgba(43,90,39,0.15)] transition-all duration-500 hover:-translate-y-3 overflow-hidden">
+      
+      {/* Animated Gradient Border on Hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#BF9B30]/20 via-transparent to-[#2B5A27]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      
+      {/* Corner Tag */}
+      <div className="absolute top-6 right-8 bg-stone-50 group-hover:bg-[#BF9B30]/10 px-3 py-1 rounded-full transition-colors">
+        <span className="text-[8px] font-black uppercase tracking-widest text-stone-400 group-hover:text-[#BF9B30]">
+          {tag}
+        </span>
+      </div>
+
+      {/* Icon Wrapper */}
+      <div className="relative z-10 mb-8 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#FBF9F6] text-[#BF9B30] group-hover:bg-[#2B5A27] group-hover:text-white transition-all duration-500 transform group-hover:rotate-[10deg]">
         {icon}
       </div>
-      <div>
+
+      {/* Content */}
+      <div className="relative z-10 space-y-4">
         <h3
           style={{ color: COLORS.green }}
-          className="text-base font-black uppercase tracking-tighter leading-none mb-1"
+          className="text-2xl font-black uppercase tracking-tighter leading-none"
         >
           {title}
         </h3>
-        <p className="text-[10px] text-stone-400 font-bold uppercase tracking-widest">
+        <p className="text-stone-500 text-sm leading-relaxed font-medium">
           {desc}
         </p>
       </div>
+
+      {/* Subtle Bottom Accent */}
+      <div className="absolute bottom-0 left-0 w-0 h-1.5 bg-[#BF9B30] group-hover:w-full transition-all duration-700"></div>
     </div>
   );
 }
