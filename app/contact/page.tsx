@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { Phone, Mail, MapPin, Send, MessageSquare, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, MessageSquare } from 'lucide-react';
 
 const COLORS = {
   green: '#2B5A27',
@@ -29,14 +29,15 @@ export default function ContactPage() {
           >
             Connect with us
           </span>
+          {/* FIXED APOSTROPHE BELOW */}
           <h1 className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter leading-none">
-            Let's Grow <br />{' '}
+            Let&apos;s Grow <br />{' '}
             <span style={{ color: COLORS.gold }}>Together</span>
           </h1>
         </div>
       </div>
 
-      {/* 2. CONTACT INFO CARDS - Floating Header Style */}
+      {/* 2. CONTACT INFO CARDS */}
       <div className="max-w-7xl mx-auto -mt-24 px-6 relative z-20 grid md:grid-cols-3 gap-8">
         <ContactCard
           icon={<Phone size={28} />}
@@ -58,7 +59,7 @@ export default function ContactPage() {
         />
       </div>
 
-      {/* 3. MAIN FORM SECTION - Professional Split Layout */}
+      {/* 3. MAIN FORM SECTION */}
       <div className="max-w-7xl mx-auto mt-24 px-6">
         <div className="bg-white rounded-[4rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-stone-100">
           {/* Left Side: Branding/Image Section */}
@@ -66,7 +67,6 @@ export default function ContactPage() {
             style={{ backgroundColor: COLORS.green }}
             className="lg:w-1/3 p-12 text-white flex flex-col justify-between relative overflow-hidden"
           >
-            {/* Subtle Pattern Overlay */}
             <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]"></div>
 
             <div className="relative z-10">
@@ -74,7 +74,7 @@ export default function ContactPage() {
                 Reach out to the <br />{' '}
                 <span style={{ color: COLORS.gold }}>Seed Experts</span>
               </h3>
-              <p className="text-white/70 text-sm leading-relaxed mb-10">
+              <p className="text-white/70 text-sm leading-relaxed mb-10 font-medium">
                 Whether you are a farmer looking for high-yield paddy or a
                 distributor interested in our hybrid maize, our team is here to
                 assist you.

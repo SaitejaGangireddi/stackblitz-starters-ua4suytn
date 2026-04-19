@@ -123,13 +123,13 @@ export default function HomePage() {
         <div className="relative z-20 h-full max-w-7xl mx-auto px-10 flex flex-col items-start justify-center">
           <div className="max-w-3xl animate-in fade-in slide-in-from-left-8 duration-700">
             <h1 className="text-white text-5xl md:text-7xl font-black mb-6 tracking-tighter uppercase leading-[0.85]">
-              A Farmer's Smile <br /> Is The
+              A Farmer&apos;s Smile <br /> Is The
               <span style={{ color: COLORS.gold }}> True Sign</span> <br />
               Of A Thriving Nation
             </h1>
             <p className="text-white/90 text-lg md:text-xl font-medium mb-10 leading-relaxed italic border-l-4 border-[#BF9B30] pl-6 max-w-xl">
-              "Every seed we provide carries the promise of prosperity, nurtured
-              through extensive research and innovation."
+              &quot;Every seed we provide carries the promise of prosperity, nurtured
+              through extensive research and innovation.&quot;
             </p>
             <button
               style={{ backgroundColor: COLORS.red }}
@@ -156,7 +156,7 @@ export default function HomePage() {
           />
           <FeatureCard
             icon={<Users size={32} />}
-            title="Farmer's Trust"
+            title="Farmer&apos;s Trust"
             desc="Treating every seed like a promise."
           />
         </div>
@@ -173,7 +173,7 @@ export default function HomePage() {
                 style={{ color: COLORS.gold }}
                 className="text-[9px] font-black uppercase tracking-widest"
               >
-                A Farmer’s Trust
+                A Farmer&rsquo;s Trust
               </span>
             </div>
 
@@ -182,12 +182,12 @@ export default function HomePage() {
               className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none"
             >
               Welcome to Annapurna <br />{' '}
-              <span style={{ color: COLORS.gold }}>Seeds & Farms</span>
+              <span style={{ color: COLORS.gold }}>Seeds &amp; Farms</span>
             </h2>
 
             <div className="space-y-6 text-stone-600 text-lg leading-relaxed font-medium">
               <p>
-                At Annapurna Seeds & Farms,{' '}
+                At Annapurna Seeds &amp; Farms,{' '}
                 <strong className="text-[#2B5A27]">
                   Farmers always come first
                 </strong>
@@ -202,8 +202,8 @@ export default function HomePage() {
               </p>
 
               <div className="p-8 bg-[#FBF9F6] rounded-3xl border-l-8 border-[#2B5A27] text-stone-700 italic shadow-inner">
-                "Our core objective: To provide high-quality seeds that are
-                disease-tolerant and deliver high yields."
+                &quot;Our core objective: To provide high-quality seeds that are
+                disease-tolerant and deliver high yields.&quot;
               </div>
             </div>
           </div>
@@ -221,7 +221,7 @@ export default function HomePage() {
             <div className="space-y-8 relative z-10">
               <ProductionStep
                 icon={<Microscope />}
-                label="R&D Center"
+                label="R&amp;D Center"
                 sub="Managed In-House"
               />
               <ProductionStep
@@ -238,7 +238,7 @@ export default function HomePage() {
 
             <div className="mt-4 pt-8 border-t border-white/10 relative z-10 opacity-60">
               <p className="text-[10px] font-bold uppercase tracking-widest">
-                Varietal & Hybrid seeds for Field Crops and Vegetables.
+                Varietal &amp; Hybrid seeds for Field Crops and Vegetables.
               </p>
             </div>
           </div>
