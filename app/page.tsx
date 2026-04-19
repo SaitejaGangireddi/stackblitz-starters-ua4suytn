@@ -256,7 +256,6 @@ export default function HomePage() {
             Varieties
           </h2>
           <span className="text-white/40 font-bold text-[10px] uppercase tracking-[0.4em] mb-1">
-            Scroll to explore
           </span>
         </div>
 
