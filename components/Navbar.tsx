@@ -13,6 +13,7 @@ export default function Navbar() {
   return (
     <nav className="w-full sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-stone-200 shadow-sm">
       <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+        
         {/* Brand Section */}
         <Link href="/" className="flex items-center gap-4 group shrink-0">
           <img
@@ -31,7 +32,7 @@ export default function Navbar() {
               style={{ color: COLORS.red }}
               className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.3em] mt-1"
             >
-              Seeds & Farms
+              Seeds &amp; Farms
             </span>
           </div>
         </Link>
@@ -42,7 +43,7 @@ export default function Navbar() {
             Home
           </Link>
 
-          {/* ABOUT US - Fixed Click Logic */}
+          {/* ABOUT US - Dropdown */}
           <div className="relative group py-2">
             <Link
               href="/about"
@@ -50,19 +51,18 @@ export default function Navbar() {
             >
               About Us <ChevronDown size={14} style={{ color: COLORS.gold }} />
             </Link>
-            {/* The dropdown - Ensure it has a top margin so it doesn't overlap the main link */}
             <div className="absolute hidden group-hover:block bg-white border border-stone-100 shadow-2xl w-64 top-[100%] left-0 rounded-b-2xl overflow-hidden animate-in fade-in slide-in-from-top-1 z-0">
               <Link
                 href="/about/r-and-d"
                 className="block px-6 py-4 hover:bg-stone-50 border-b lowercase first-letter:uppercase"
               >
-                Research & Development
+                Research &amp; Development
               </Link>
               <Link
                 href="/about/processing"
                 className="block px-6 py-4 hover:bg-stone-50 border-b lowercase first-letter:uppercase"
               >
-                Processing & Treatment
+                Processing &amp; Treatment
               </Link>
               <Link
                 href="/about/production"
@@ -73,7 +73,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* PRODUCTS - Fixed Click Logic */}
+          {/* PRODUCTS - Dropdown */}
           <div className="relative group py-2">
             <Link
               href="/products"

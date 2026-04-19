@@ -27,7 +27,7 @@ export default function ProductsOverview() {
       desc: 'Superior hybrid maize technology focused on high vigour, sturdy stalks, and exceptional grain weight.',
       context:
         'Coming Soon: We are currently in the advanced evaluation stage for hybrids that deliver consistent performance even in water-stressed environments.',
-      img: 'https://res.cloudinary.com/dmkjnuolr/image/upload/q_auto/f_auto/v1776610529/maize_dfa6h2.png', // Distinct Maize Image
+      img: 'https://res.cloudinary.com/dmkjnuolr/image/upload/q_auto/f_auto/v1776610529/maize_dfa6h2.png',
     },
     {
       name: 'Vegetable Seeds',
@@ -36,7 +36,7 @@ export default function ProductsOverview() {
       desc: 'Premium vegetable seed portfolio including high-demand varieties focused on uniform size, taste, and transportability.',
       context:
         'Coming Soon: Developing disease-resistant vegetable seeds to help local farmers meet growing market demands with lower pesticide reliance.',
-      img: 'https://res.cloudinary.com/dmkjnuolr/image/upload/q_auto/f_auto/v1776611040/Vegetables_seeds_b7xfgj.webp', // Distinct Vegetable Image
+      img: 'https://res.cloudinary.com/dmkjnuolr/image/upload/q_auto/f_auto/v1776611040/Vegetables_seeds_b7xfgj.webp',
     },
   ];
 
@@ -115,13 +115,13 @@ export default function ProductsOverview() {
           ))}
         </div>
 
-        {/* Bottom Portfolio Statement */}
+        {/* 3. FIXED PORTFOLIO STATEMENT - ESCAPED CHARACTERS */}
         <div className="mt-20 bg-white p-12 rounded-[4rem] border border-stone-100 shadow-sm text-center">
           <p className="max-w-4xl mx-auto text-stone-500 font-medium leading-relaxed italic">
-            "Our product portfolio includes varietal and hybrid seeds for field
-            crops and vegetables. At Annapurna Seeds & Farms, we work closely
+            &quot;Our product portfolio includes varietal and hybrid seeds for field
+            crops and vegetables. At Annapurna Seeds &amp; Farms, we work closely
             with farmers to provide the best seeds that align with evolving
-            market needs."
+            market needs.&quot;
           </p>
         </div>
       </div>
