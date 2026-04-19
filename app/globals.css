@@ -18,23 +18,34 @@ body {
   color: var(--neutral-black);
   background: var(--stone-white);
   font-family: 'Inter', sans-serif;
+  overflow-x: hidden; /* Prevents unwanted horizontal scrollbars */
 }
 
-@keyframes scroll {
+/* 1. SLOW INFINITE SCROLL ANIMATION */
+@keyframes scroll-slow {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-320px * 10));
+    /* Moves the container half-way (since we duplicated the items in JSX) */
+    transform: translateX(-50%);
   }
 }
 
-.animate-scroll {
+.animate-scroll-slow {
   display: flex;
-  width: calc(320px * 20);
-  animation: scroll 40s linear infinite;
+  /* Adjust the '40s' to make it faster or slower */
+  animation: scroll-slow 40s linear infinite;
+  /* Ensures the container is wide enough to hold all items in one row */
+  width: max-content; 
 }
 
-.animate-scroll:hover {
+/* 2. HOVER TO PAUSE */
+.hover\:pause:hover {
   animation-play-state: paused;
+}
+
+/* 3. OPTIONAL: SMOOTH SCROLLING FOR LINKS */
+html {
+  scroll-behavior: smooth;
 }

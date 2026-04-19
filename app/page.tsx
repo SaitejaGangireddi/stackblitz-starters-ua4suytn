@@ -99,18 +99,16 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: COLORS.stone }}>
-      {/* 1. RESTORED HERO - Clean Left Overlay (No Glass Box) */}
+      {/* 1. HERO SECTION */}
       <section className="relative h-[600px] overflow-hidden bg-stone-900">
         {HERO_IMAGES.map((img, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === current
-                ? 'opacity-100 scale-105'
-                : 'opacity-0 scale-100'
-            }`}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === current
+              ? 'opacity-100 scale-105'
+              : 'opacity-0 scale-100'
+              }`}
           >
-            {/* Gradient to darken the left side for readability */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent z-10" />
             <img
               src={img}
@@ -141,81 +139,60 @@ export default function HomePage() {
         </div>
       </section>
 
-{/* 2. WHY CHOOSE US - STYLIZED VERSION */}
-<section className="py-24 px-6 max-w-7xl mx-auto relative">
-  {/* Background Decorative Element */}
-  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-full bg-[#BF9B30]/5 blur-[120px] rounded-full -z-10"></div>
+      {/* 2. WHY CHOOSE US */}
+      <section className="py-24 px-6 max-w-7xl mx-auto relative">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-full bg-[#BF9B30]/5 blur-[120px] rounded-full -z-10"></div>
 
-  <div className="text-center mb-16 space-y-4">
-    <span style={{ color: COLORS.gold }} className="text-[10px] font-black uppercase tracking-[0.4em]">
-      The Annapurna Advantage
-    </span>
-    <h2 style={{ color: COLORS.green }} className="text-4xl md:text-5xl font-black uppercase tracking-tighter">
-      Why Farmers <span style={{ color: COLORS.gold }}>Choose Us</span>
-    </h2>
-  </div>
+        <div className="text-center mb-16 space-y-4">
+          <span style={{ color: COLORS.gold }} className="text-[10px] font-black uppercase tracking-[0.4em]">
+            The Annapurna Advantage
+          </span>
+          <h2 style={{ color: COLORS.green }} className="text-4xl md:text-5xl font-black uppercase tracking-tighter">
+            Why Farmers <span style={{ color: COLORS.gold }}>Choose Us</span>
+          </h2>
+        </div>
 
-  <div className="grid md:grid-cols-3 gap-8">
-    <FeatureCard
-      icon={<ShieldCheck size={40} />}
-      title="Unmatched Quality"
-      desc="Every batch undergoes rigorous 7-layer testing to ensure only the finest seeds reach your soil."
-      tag="Certified"
-    />
-    <FeatureCard
-      icon={<TrendingUp size={40} />}
-      title="Superior Yields"
-      desc="Driven by scientific R&amp;D to deliver up to 30% higher output than standard local varieties."
-      tag="Research-Led"
-    />
-    <FeatureCard
-      icon={<Users size={40} />}
-      title="Farmer&apos;s Legacy"
-      desc="Built on 25+ years of trust, treating every single seed like a sacred promise of prosperity."
-      tag="Trusted"
-    />
-  </div>
-</section>
+        <div className="grid md:grid-cols-3 gap-8">
+          <FeatureCard
+            icon={<ShieldCheck size={40} />}
+            title="Unmatched Quality"
+            desc="Every batch undergoes rigorous 7-layer testing to ensure only the finest seeds reach your soil."
+            tag="Certified"
+          />
+          <FeatureCard
+            icon={<TrendingUp size={40} />}
+            title="Superior Yields"
+            desc="Driven by scientific R&amp;D to deliver up to 30% higher output than standard local varieties."
+            tag="Research-Led"
+          />
+          <FeatureCard
+            icon={<Users size={40} />}
+            title="Farmer&apos;s Legacy"
+            desc="Built on 25+ years of trust, treating every single seed like a sacred promise of prosperity."
+            tag="Trusted"
+          />
+        </div>
+      </section>
 
-      {/* 3. MISSION SECTION - (The one you liked!) */}
+      {/* 3. MISSION SECTION */}
       <section className="max-w-7xl mx-auto py-12 px-6">
         <div className="bg-white rounded-[4rem] shadow-sm border border-stone-100 overflow-hidden flex flex-col lg:flex-row">
-          {/* Left Side: Enhanced Matter */}
           <div className="flex-1 p-12 md:p-20 space-y-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#BF9B30]/10 border border-[#BF9B30]/20">
               <Sprout size={14} style={{ color: COLORS.gold }} />
-              <span
-                style={{ color: COLORS.gold }}
-                className="text-[9px] font-black uppercase tracking-widest"
-              >
+              <span style={{ color: COLORS.gold }} className="text-[9px] font-black uppercase tracking-widest">
                 A Farmer&rsquo;s Trust
               </span>
             </div>
 
-            <h2
-              style={{ color: COLORS.green }}
-              className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none"
-            >
-              Welcome to Annapurna <br />{' '}
-              <span style={{ color: COLORS.gold }}>Seeds &amp; Farms</span>
+            <h2 style={{ color: COLORS.green }} className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none">
+              Welcome to Annapurna <br /> <span style={{ color: COLORS.gold }}>Seeds &amp; Farms</span>
             </h2>
 
             <div className="space-y-6 text-stone-600 text-lg leading-relaxed font-medium">
               <p>
-                At Annapurna Seeds &amp; Farms,{' '}
-                <strong className="text-[#2B5A27]">
-                  Farmers always come first
-                </strong>
-                . We work closely with them to empower their journey towards
-                prosperity.
+                At Annapurna Seeds &amp; Farms, <strong className="text-[#2B5A27]">Farmers always come first</strong>. We work closely with them to empower their journey towards prosperity.
               </p>
-              <p className="text-base opacity-80">
-                We take pride in our <strong>In-House Ecosystem</strong>.
-                Ensuring that every stage of production is managed in-house
-                allows us to maintain complete control over quality and
-                innovation.
-              </p>
-
               <div className="p-8 bg-[#FBF9F6] rounded-3xl border-l-8 border-[#2B5A27] text-stone-700 italic shadow-inner">
                 &quot;Our core objective: To provide high-quality seeds that are
                 disease-tolerant and deliver high yields.&quot;
@@ -223,77 +200,62 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right Side: Total Production Control */}
-          <div
-            style={{ backgroundColor: COLORS.green }}
-            className="lg:w-[40%] p-12 md:p-16 text-white flex flex-col justify-center gap-10 relative"
-          >
+          <div style={{ backgroundColor: COLORS.green }} className="lg:w-[40%] p-12 md:p-16 text-white flex flex-col justify-center gap-10 relative">
             <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]"></div>
             <h3 className="text-2xl font-black uppercase tracking-tight relative z-10">
               Total Production <br /> Control
             </h3>
-
             <div className="space-y-8 relative z-10">
-              <ProductionStep
-                icon={<Microscope />}
-                label="R&amp;D Center"
-                sub="Managed In-House"
-              />
-              <ProductionStep
-                icon={<Factory />}
-                label="Processing Units"
-                sub="Quality Guaranteed"
-              />
-              <ProductionStep
-                icon={<Truck />}
-                label="Dispatch"
-                sub="Timely Delivery"
-              />
-            </div>
-
-            <div className="mt-4 pt-8 border-t border-white/10 relative z-10 opacity-60">
-              <p className="text-[10px] font-bold uppercase tracking-widest">
-                Varietal &amp; Hybrid seeds for Field Crops and Vegetables.
-              </p>
+              <ProductionStep icon={<Microscope />} label="R&amp;D Center" sub="Managed In-House" />
+              <ProductionStep icon={<Factory />} label="Processing Units" sub="Quality Guaranteed" />
+              <ProductionStep icon={<Truck />} label="Dispatch" sub="Timely Delivery" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. PREMIUM VARIETIES SCROLLER */}
+      {/* 4. PREMIUM VARIETIES SCROLLER - REFINED SPACING & SLOW SCROLL */}
       <section
         style={{ backgroundColor: COLORS.green }}
-        className="py-20 overflow-hidden relative rounded-b-[4rem] z-10 shadow-2xl"
+        className="py-24 overflow-hidden relative rounded-b-[4rem] z-10 shadow-2xl"
       >
-        <div className="max-w-7xl mx-auto px-6 mb-10 flex justify-between items-end">
-          <h2 className="text-white text-3xl font-black uppercase tracking-tighter leading-none">
-            Our <span style={{ color: COLORS.gold }}>Premium</span> <br />{' '}
-            Varieties
-          </h2>
-          <span className="text-white/40 font-bold text-[10px] uppercase tracking-[0.4em] mb-1">
+        <div className="max-w-7xl mx-auto px-6 mb-12">
+          <span style={{ color: COLORS.gold }} className="text-[10px] font-black uppercase tracking-[0.4em] mb-2 block">
+            Our Collection
           </span>
+          <h2 className="text-white text-4xl md:text-5xl font-black uppercase tracking-tighter leading-none">
+            Premium <span style={{ color: COLORS.gold }}>Varieties</span>
+          </h2>
         </div>
 
-        <div className="flex relative">
-          <div className="flex gap-6 animate-scroll whitespace-nowrap">
+        {/* Outer Container with slower animation and gap */}
+        <div className="relative overflow-visible">
+          <div className="flex gap-12 animate-scroll-slow whitespace-nowrap px-10 hover:pause">
             {[...paddyItems, ...paddyItems].map((item, idx) => (
               <div
                 key={idx}
-                className="min-w-[240px] bg-white p-8 rounded-[2.5rem] text-center hover:scale-105 transition-all duration-500 shadow-xl"
+                className="group/card relative min-w-[280px] bg-white rounded-[3rem] p-8 text-center shadow-2xl transition-all duration-700 hover:-translate-y-4 flex flex-col items-center border border-white/10"
               >
-                <div className="h-40 mb-4 flex items-center justify-center">
+                {/* Image Container */}
+                <div className="h-52 w-full mb-6 flex items-center justify-center bg-stone-50 rounded-[2.5rem] group-hover/card:bg-white transition-colors duration-500 overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="h-full w-auto object-contain"
+                    className="h-40 w-auto object-contain transition-transform duration-700 group-hover/card:scale-110"
                   />
                 </div>
-                <h4
-                  style={{ color: COLORS.green }}
-                  className="font-black text-[10px] uppercase tracking-tighter whitespace-normal px-2"
-                >
-                  {item.name}
-                </h4>
+
+                <div className="space-y-2">
+                  <h4
+                    style={{ color: COLORS.green }}
+                    className="font-black text-xs md:text-sm uppercase tracking-tighter whitespace-normal px-2 leading-tight flex items-center justify-center"
+                  >
+                    {item.name}
+                  </h4>
+                  <p style={{ color: COLORS.gold }} className="text-[9px] font-black uppercase tracking-widest opacity-60 italic">
+                    Premium Grade
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -305,41 +267,26 @@ export default function HomePage() {
   );
 }
 
-// --- Update the FeatureCard component below ---
-
 function FeatureCard({ icon, title, desc, tag }: any) {
   return (
     <div className="group relative p-10 rounded-[3rem] bg-white border border-stone-100 shadow-[0_10px_40px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_60px_-10px_rgba(43,90,39,0.15)] transition-all duration-500 hover:-translate-y-3 overflow-hidden">
-      
-      {/* Animated Gradient Border on Hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#BF9B30]/20 via-transparent to-[#2B5A27]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-      
-      {/* Corner Tag */}
       <div className="absolute top-6 right-8 bg-stone-50 group-hover:bg-[#BF9B30]/10 px-3 py-1 rounded-full transition-colors">
         <span className="text-[8px] font-black uppercase tracking-widest text-stone-400 group-hover:text-[#BF9B30]">
           {tag}
         </span>
       </div>
-
-      {/* Icon Wrapper */}
       <div className="relative z-10 mb-8 inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#FBF9F6] text-[#BF9B30] group-hover:bg-[#2B5A27] group-hover:text-white transition-all duration-500 transform group-hover:rotate-[10deg]">
         {icon}
       </div>
-
-      {/* Content */}
       <div className="relative z-10 space-y-4">
-        <h3
-          style={{ color: COLORS.green }}
-          className="text-2xl font-black uppercase tracking-tighter leading-none"
-        >
+        <h3 style={{ color: COLORS.green }} className="text-2xl font-black uppercase tracking-tighter leading-none">
           {title}
         </h3>
         <p className="text-stone-500 text-sm leading-relaxed font-medium">
           {desc}
         </p>
       </div>
-
-      {/* Subtle Bottom Accent */}
       <div className="absolute bottom-0 left-0 w-0 h-1.5 bg-[#BF9B30] group-hover:w-full transition-all duration-700"></div>
     </div>
   );
