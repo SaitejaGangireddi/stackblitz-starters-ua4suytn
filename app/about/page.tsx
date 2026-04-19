@@ -3,7 +3,6 @@ import React from 'react';
 import {
   Sprout,
   Award,
-  ShieldCheck,
   History,
   Target,
   Users,
@@ -34,8 +33,9 @@ export default function AboutPage() {
           </h1>
           <div className="flex items-center justify-center gap-4">
             <div className="h-[2px] w-12 bg-[#BF9B30]"></div>
+            {/* FIXED APOSTROPHE BELOW */}
             <p className="text-white/90 font-black uppercase tracking-[0.4em] text-[10px]">
-              A Farmer's Trust since 1996
+              A Farmer&apos;s Trust since 1996
             </p>
             <div className="h-[2px] w-12 bg-[#BF9B30]"></div>
           </div>
@@ -85,7 +85,8 @@ export default function AboutPage() {
 
             <div className="space-y-8 text-stone-600 text-lg leading-relaxed font-medium">
               <p>
-                Annapurna Seeds & Farms was founded in{' '}
+                {/* FIXED AMPERSAND BELOW */}
+                Annapurna Seeds &amp; Farms was founded in{' '}
                 <strong>1996 by Mr. Chandupatla Venugopal Reddy</strong>, coming
                 from a farming family in Telangana.
               </p>
@@ -99,11 +100,12 @@ export default function AboutPage() {
                 <div className="absolute top-0 right-0 opacity-[0.05] p-4 text-[#2B5A27]">
                   <Award size={80} />
                 </div>
+                {/* FIXED QUOTES BELOW */}
                 <p
                   style={{ color: COLORS.green }}
                   className="font-black italic text-2xl uppercase tracking-tight"
                 >
-                  “Purity is our mantra.”
+                  &ldquo;Purity is our mantra.&rdquo;
                 </p>
                 <p className="mt-4 text-base opacity-70 leading-relaxed">
                   To this day, we uphold these values, ensuring that every seed
