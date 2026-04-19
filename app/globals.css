@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Taken from the leaf in the logo */
+  --primary-green: #2b5a27;
+  /* From the maroon of the traditional dress */
+  --crimson-red: #8c1c1c;
+  /* From the golden crown and ornaments */
+  --heritage-gold: #bf9b30;
+
+  --stone-white: #fbf9f6;
+  --neutral-black: #1a1a1a;
+}
+
+body {
+  color: var(--neutral-black);
+  background: var(--stone-white);
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-320px * 10));
+  }
+}
+
+.animate-scroll {
+  display: flex;
+  width: calc(320px * 20);
+  animation: scroll 40s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
