@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import {
   ShieldCheck,
   TrendingUp,
@@ -129,12 +130,15 @@ export default function HomePage() {
               &quot;Every seed we provide carries the promise of prosperity, nurtured
               through extensive research and innovation.&quot;
             </p>
-            <button
-              style={{ backgroundColor: COLORS.red }}
-              className="text-white px-12 py-4 rounded-full font-black uppercase tracking-widest shadow-2xl hover:scale-105 transition"
-            >
-              Explore Our Seeds
-            </button>
+            {/* FIXED: Linked button to target destination overview page */}
+            <Link href="/products">
+              <button
+                style={{ backgroundColor: COLORS.red }}
+                className="text-white px-12 py-4 rounded-full font-black uppercase tracking-widest shadow-2xl hover:scale-105 transition"
+              >
+                Explore Our Seeds
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -156,8 +160,7 @@ export default function HomePage() {
           <FeatureCard
             icon={<ShieldCheck size={40} />}
             title="Quality"
-            desc="Quality is never compromised. Our commitment is to deliver only the best
-to our farmers, ensuring reliability, performance, and trust in every seed."
+            desc="Quality is never compromised. Our commitment is to deliver only the best to our farmers, ensuring reliability, performance, and trust in every seed."
             tag="Certified"
           />
           <FeatureCard
