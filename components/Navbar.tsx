@@ -59,16 +59,16 @@ export default function Navbar() {
                 Research &amp; Development
               </Link>
               <Link
-                href="/about/processing"
-                className="block px-6 py-4 hover:bg-stone-50 border-b lowercase first-letter:uppercase"
-              >
-                Processing &amp; Treatment
-              </Link>
-              <Link
                 href="/about/production"
                 className="block px-6 py-4 hover:bg-stone-50 lowercase first-letter:uppercase"
               >
                 Production
+              </Link>
+              <Link
+                href="/about/processing"
+                className="block px-6 py-4 hover:bg-stone-50 border-b lowercase first-letter:uppercase"
+              >
+                Processing &amp; Treatment
               </Link>
             </div>
           </div>

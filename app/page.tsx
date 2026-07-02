@@ -155,14 +155,15 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-8">
           <FeatureCard
             icon={<ShieldCheck size={40} />}
-            title="Unmatched Quality"
-            desc="Every batch undergoes rigorous 7-layer testing to ensure only the finest seeds reach your soil."
+            title="Quality"
+            desc="Quality is never compromised. Our commitment is to deliver only the best
+to our farmers, ensuring reliability, performance, and trust in every seed."
             tag="Certified"
           />
           <FeatureCard
             icon={<TrendingUp size={40} />}
             title="Superior Yields"
-            desc="Driven by scientific R&amp;D to deliver up to 30% higher output than standard local varieties."
+            desc="Driven by scientific R&amp;D to deliver higher output than standard local varieties."
             tag="Research-Led"
           />
           <FeatureCard

@@ -166,7 +166,7 @@ export default function RDPage() {
               Genetic Purity
             </h4>
             <p className="text-stone-500 font-medium">
-              Rigorous selection processes to ensure 100% variety consistency.
+              Rigorous selection processes to ensure variety consistency.
             </p>
           </div>
 
@@ -186,7 +186,7 @@ export default function RDPage() {
               Climate Adaptive
             </h4>
             <p className="text-stone-500 font-medium">
-              Developing seeds that survive and thrive in varying Indian
+              Developing seeds that survive and thrive in different climatic
               conditions.
             </p>
           </div>

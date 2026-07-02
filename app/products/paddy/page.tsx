@@ -1,8 +1,8 @@
 'use client';
 import { useState } from 'react';
-import { X, Calendar, Wheat, ShieldCheck } from 'lucide-react';
+import { X, Calendar, Wheat, ShieldCheck, Box } from 'lucide-react';
 
-// 1. DEFINE TYPE INTERFACE FOR TYPESCRIPT VALIDATION
+// Define type interface for TypeScript validation
 interface PaddyItem {
   id: number;
   type: string;
@@ -18,7 +18,7 @@ const paddyItems: PaddyItem[] = [
     name: 'ARUNDATHI AHP 8899',
     image:
       'https://res.cloudinary.com/dmkjnuolr/image/upload/v1776596997/Arundathi_t180wb.jpg',
-    info: '120-125 Days | Long slender grains | Non-Lodging | High vigour & yield | Field tolerance to Bacterial Leaf Blight & Blast',
+    info: 'Mid Early Maturity (120-125 Day) | Long slender grains | Non-Lodging | High vigour & yield | Field tolerance to Bacterial Leaf Blight & Blast | Suitable for cultivation in both Kharif & Rabi season',
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const paddyItems: PaddyItem[] = [
     name: 'VENNELA (AP-121)',
     image:
       'https://res.cloudinary.com/dmkjnuolr/image/upload/v1776597107/Vennela_n7mzms.jpg',
-    info: '145-150 Days | Medium slender Grains | High yield grain | Non-Lodging | Field tolerance to Bacterial Leaf Blight',
+    info: 'Mid Early Maturity (130-135 Days) | Long slender Grains | High yield grain | Non-Lodging | Field tolerance to Bacterial Leaf Blight',
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const paddyItems: PaddyItem[] = [
     name: 'INDUMATHI (AP-132)',
     image:
       'https://res.cloudinary.com/dmkjnuolr/image/upload/v1776597011/Indumathi_hwrkaq.jpg',
-    info: '130-135 Days | Super fine grain | High yield grain | Non-Lodging | Field tolerance to Bacterial Leaf Blight',
+    info: 'Medium Maturity (130-135 Days) | Super fine grain | High yield grain | Non-Lodging | Field tolerance to Bacterial Leaf Blight',
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const paddyItems: PaddyItem[] = [
     name: 'KAMALA (AP-111)',
     image:
       'https://res.cloudinary.com/dmkjnuolr/image/upload/v1776597027/Kamala_tdm2gm.jpg',
-    info: '145-150 Days | Medium slender grains | Non-Lodging | Field tolerance to Bacterial Leaf Blight',
+    info: 'Late Maturity (145-150 Days) | Medium slender grains | Non-Lodging | Field tolerance to Bacterial Leaf Blight ',
   },
   {
     id: 5,
@@ -50,7 +50,7 @@ const paddyItems: PaddyItem[] = [
     name: 'PARAMAHAMSA (AP-129)',
     image:
       'https://res.cloudinary.com/dmkjnuolr/image/upload/v1776597069/Paramahamsa_tm9qp2.jpg',
-    info: '140-145 Days | Medium slender grains | Non-Lodging | Field tolerance to Bacterial Leaf Blight',
+    info: 'Late Maturity (140-145 Days) | Medium bold grains | Non-Lodging | Field tolerance to Bacterial Leaf Blight',
   },
   {
     id: 6,
@@ -66,7 +66,7 @@ const paddyItems: PaddyItem[] = [
     name: 'KAMALA GOLD (AP-111)',
     image:
       'https://res.cloudinary.com/dmkjnuolr/image/upload/v1776597044/Kamala_gold_cxlw0q.jpg',
-    info: '140-145 Days | Medium slender grains | Non-Lodging | Field tolerance to Bacterial Leaf Blight',
+    info: 'Late Maturity (140-145 Days) | Medium slender grains | Non-Lodging | Field tolerance to Bacterial Leaf Blight',
   },
   {
     id: 8,
@@ -82,7 +82,7 @@ const paddyItems: PaddyItem[] = [
     name: 'VAISHNAVI (AP-113)',
     image:
       'https://res.cloudinary.com/dmkjnuolr/image/upload/v1776597110/Vaishnavi_ev0hae.jpg',
-    info: '145-150 Days | Medium slender grains | Non-Lodging | Field tolerance to Bacterial Leaf Blight',
+    info: 'Early Maturity (115-120 Days) | Long slender grains | Non-Lodging | Field tolerance to Bacterial Leaf Blight | Suitable for cultivation in both Kharif & Rabi season',
   },
   {
     id: 10,
@@ -90,7 +90,39 @@ const paddyItems: PaddyItem[] = [
     name: 'VIJAYA DURGA (AP-130)',
     image:
       'https://res.cloudinary.com/dmkjnuolr/image/upload/v1776597113/Vijayadurga_qihoz6.jpg',
-    info: '115-120 Days | Medium bold grains | Non-Lodging | Field tolerance to Bacterial Leaf Blight',
+    info: 'Early Maturity (115-120 Days) | Medium bold grains | Non-Lodging | Field tolerance to Bacterial Leaf Blight | Suitable for cultivation in both Kharif & Rabi season',
+  },
+  {
+    id: 11,
+    type: 'PADDY SEEDS',
+    name: 'IR-64',
+    image:
+      'https://res.cloudinary.com/dmkjnuolr/image/upload/v1783010205/IR_64_njbvx7.png',
+    info: '',
+  },
+  {
+    id: 12,
+    type: 'PADDY SEEDS',
+    name: 'MITU -1156',
+    image:
+      'https://res.cloudinary.com/dmkjnuolr/image/upload/v1783010344/MITU_1156_kh4hn8.png',
+    info: '',
+  },
+  {
+    id: 13,
+    type: 'PADDY SEEDS',
+    name: 'MTU -7029',
+    image:
+      'https://res.cloudinary.com/dmkjnuolr/image/upload/v1783010344/MTU_7029_rrgcp6.png',
+    info: '',
+  },
+  {
+    id: 14,
+    type: 'PADDY SEEDS',
+    name: 'RNR -15048',
+    image:
+      'https://res.cloudinary.com/dmkjnuolr/image/upload/v1783010343/RNR_wdvoi9.png',
+    info: '',
   },
 ];
 
@@ -102,7 +134,6 @@ const COLORS = {
 };
 
 export default function PaddyPage() {
-  // 2. INITIALIZE STATE WITH TYPE SUPPORT
   const [activeItem, setActiveItem] = useState<PaddyItem | null>(null);
 
   return (
@@ -130,7 +161,7 @@ export default function PaddyPage() {
                   className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-              <div className="text-center">
+              <div className="text-center w-full">
                 <span
                   style={{ color: COLORS.gold }}
                   className="text-[10px] font-black uppercase tracking-widest block mb-1"
@@ -139,10 +170,15 @@ export default function PaddyPage() {
                 </span>
                 <p
                   style={{ color: COLORS.green }}
-                  className="font-black text-[11px] leading-tight uppercase"
+                  className="font-black text-[11px] leading-tight uppercase mb-2"
                 >
                   {item.name}
                 </p>
+                
+                {/* Visual Packaging Availability Strip */}
+                <div className="text-[8px] font-bold text-stone-400 bg-stone-50 py-1 rounded-full px-2 inline-block">
+                  Sizes: 1kg • 3kg • 6kg • 10kg
+                </div>
               </div>
               <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity bg-stone-50 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-[#BF9B30]">
                 View Specs
@@ -191,12 +227,12 @@ export default function PaddyPage() {
               </span>
               <h2
                 style={{ color: COLORS.green }}
-                className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-8"
+                className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-6"
               >
                 {activeItem.name}
               </h2>
 
-              <div className="space-y-4 md:space-y-6">
+              <div className="space-y-4 md:space-y-5">
                 {activeItem.info.split('|').map((spec, i) => (
                   <div key={i} className="flex items-center gap-4 group">
                     <div className="bg-stone-50 p-2 rounded-lg group-hover:bg-[#BF9B30]/10 transition shrink-0">
@@ -213,9 +249,27 @@ export default function PaddyPage() {
                     </span>
                   </div>
                 ))}
+
+                {/* ADDED: Packing Sizes Section inside Modal */}
+                <div className="flex items-center gap-4 group pt-2 border-t border-stone-100">
+                  <div className="bg-stone-50 p-2 rounded-lg group-hover:bg-[#BF9B30]/10 transition shrink-0">
+                    <Box size={18} style={{ color: COLORS.gold }} />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-black uppercase tracking-wider text-stone-400">Available Packaging</span>
+                    <div className="flex gap-2 mt-1">
+                      {['1kg', '3kg', '6kg', '10kg'].map((size) => (
+                        <span key={size} className="bg-[#2B5A27]/5 border border-[#2B5A27]/10 text-[#2B5A27] font-black text-[10px] px-2.5 py-1 rounded-md">
+                          {size}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
-              <div className="mt-10 md:mt-12 flex flex-col md:flex-row gap-4">
+              <div className="mt-8 md:mt-10 flex flex-col md:flex-row gap-4">
                 <button
                   style={{ backgroundColor: COLORS.red }}
                   className="flex-1 text-white py-4 rounded-2xl font-black uppercase tracking-widest text-[10px] hover:shadow-xl transition active:scale-95"
