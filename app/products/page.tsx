@@ -35,7 +35,7 @@ export default function ProductsOverview() {
       icon: <ShieldCheck size={20} />,
       desc: 'Premium vegetable seed portfolio including high-demand varieties focused on uniform size, taste, and transportability.',
       context:
-        'Coming Soon: Developing disease-resistant vegetable seeds to help local farmers meet growing market demands with lower pesticide reliance.',
+        'Now Available: Exploring our newly launched commercial hybrids configured for maximum yield and disease tolerance.',
       img: 'https://res.cloudinary.com/dmkjnuolr/image/upload/q_auto/f_auto/v1776611040/Vegetables_seeds_b7xfgj.webp',
     },
   ];
@@ -93,10 +93,20 @@ export default function ProductsOverview() {
                   {cat.context}
                 </p>
 
+                {/* Updated Action Route Button Router */}
                 <div className="mt-auto">
                   {cat.slug === 'paddy' ? (
                     <Link
                       href="/products/paddy"
+                      style={{ backgroundColor: COLORS.green }}
+                      className="flex items-center justify-between w-full px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest text-white hover:bg-[#8C1C1C] transition-all"
+                    >
+                      Explore Variety
+                      <ChevronRight size={14} />
+                    </Link>
+                  ) : cat.slug === 'vegetables' ? (
+                    <Link
+                      href="/products/vegetables"
                       style={{ backgroundColor: COLORS.green }}
                       className="flex items-center justify-between w-full px-8 py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest text-white hover:bg-[#8C1C1C] transition-all"
                     >
