@@ -21,7 +21,7 @@ export default function AboutPage() {
       {/* 1. PREMIUM HEADER */}
       <div className="relative h-[450px] flex items-center justify-center overflow-hidden bg-stone-900">
         <img
-          src="https://res.cloudinary.com/dmkjnuolr/image/upload/q_auto/f_auto/v1776602815/IMG_9298_ba0vjm.jpg"
+          src="https://res.cloudinary.com/dmkjnuolr/image/upload/v1788753953/About_us_kglhga.png"
           className="absolute inset-0 w-full h-full object-cover opacity-50"
           alt="Annapurna Heritage"
         />

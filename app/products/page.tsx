@@ -46,9 +46,9 @@ export default function ProductsOverview() {
       <div className="h-80 bg-[#2B5A27] relative flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]"></div>
         <div className="text-center relative z-10">
-          <h1 className="text-white text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4">
-            Our <span style={{ color: COLORS.gold }}>Products</span>
-          </h1>
+        <h1 className="text-white text-5xl md:text-7xl font-black uppercase tracking-tighter mb-4">
+  <span style={{ color: COLORS.gold }}>Products</span>
+</h1>
           <p className="text-white/60 font-black uppercase tracking-[0.4em] text-[10px]">
             Quality • Purity • Prosperity
           </p>

@@ -9,17 +9,25 @@ const COLORS = {
   stone: '#FBF9F6',
 };
 
+// All 5 Processing Facility Images provided by your friend
+const PROCESSING_GALLERY = [
+  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1788753967/Processing_1_ushokb.png',
+  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1788753954/Processing_2_sg275r.png',
+  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1788753954/Processing_3_u8zeqi.png',
+  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1788753955/Processing_4_pc7lla.png',
+  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1788753955/Processing_5_ebtpsl.png',
+];
+
 export default function ProcessingPage() {
   return (
     <div className="pb-24 bg-[#FBF9F6]">
-      {/* 1. HERO SECTION - UPDATED WITH TEMPORARY BACKGROUND */}
+      {/* 1. HERO SECTION (Without "OUR") */}
       <div className="relative h-[500px] bg-stone-900 flex items-center justify-center overflow-hidden">
         <img
-          src="https://res.cloudinary.com/dmkjnuolr/image/upload/q_auto/f_auto/v1776608786/2_snlqrw.jpg" // Temporary High-Res Industrial Farm Image
+          src="https://res.cloudinary.com/dmkjnuolr/image/upload/v1790936988/image_1_q4gkrl.png"
           className="absolute inset-0 w-full h-full object-cover opacity-50 scale-105"
           alt="Processing Facility Header"
         />
-        {/* Subtle Dark Gradient to make text pop */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-[#FBF9F6]/20"></div>
 
         <div className="relative z-10 text-center px-6">
@@ -31,7 +39,7 @@ export default function ProcessingPage() {
             <div className="h-[2px] w-12 bg-[#BF9B30]"></div>
           </div>
           <h1 className="text-6xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none mb-4 italic">
-            Our <span style={{ color: COLORS.gold }}>Processing</span>
+            <span style={{ color: COLORS.gold }}>Processing</span>
           </h1>
         </div>
       </div>
@@ -46,7 +54,7 @@ export default function ProcessingPage() {
             Quality Processing & <br />
             <span style={{ color: COLORS.gold }}>Timely Dispatch</span>
           </h2>
-          <p className="text-xl text-stone-600 leading-relaxed font-medium italic border-l-8 border-[#BF9B30] pl-8 py-4">
+          <p className="text-xl text-stone-600 leading-relaxed font-medium italic border-l-8 border-[#BF9B30] pl-8 py-4 bg-white rounded-r-3xl shadow-sm">
             Quality processing and timely dispatch are crucial to maintaining
             excellence. From seed procurement to final dispatch, a dedicated
             team of highly trained staff oversees every stage to ensure we
@@ -54,20 +62,28 @@ export default function ProcessingPage() {
           </p>
         </section>
 
-        {/* 3. VISUAL GALLERY (Cloudinary Links Integrated) */}
-        <div className="grid md:grid-cols-3 gap-8 mb-32">
-          <ProcessImage
-            src="https://res.cloudinary.com/dmkjnuolr/image/upload/q_auto/f_auto/v1776608796/1_pvm60x.jpg"
-            label="Silos & Storage Units"
-          />
-          <ProcessImage
-            src="https://res.cloudinary.com/dmkjnuolr/image/upload/v1776608774/4_lp4flv.jpg"
-            label="Climate-Controlled Godowns"
-          />
-          <ProcessImage
-            src="https://res.cloudinary.com/dmkjnuolr/image/upload/q_auto/f_auto/v1776607952/P-6_sikfqh.jpg"
-            label="Modern Processing Line"
-          />
+        {/* 3. CLEAN AUTO-SCROLLING VISUAL GALLERY (NO TITLES / SUBHEADINGS) */}
+        <div className="mb-32">
+          <div className="relative w-full overflow-hidden py-4">
+            {/* Fade edges */}
+            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#FBF9F6] to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#FBF9F6] to-transparent z-10 pointer-events-none"></div>
+
+            <div className="flex gap-8 animate-scroll-slow hover:pause whitespace-nowrap">
+              {[...PROCESSING_GALLERY, ...PROCESSING_GALLERY].map((url, idx) => (
+                <div
+                  key={idx}
+                  className="group relative min-w-[320px] md:min-w-[420px] h-80 rounded-[3rem] overflow-hidden shadow-xl border-4 border-white bg-stone-900 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl flex-shrink-0"
+                >
+                  <img
+                    src={url}
+                    alt="Facility Infrastructure"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* 4. THE INDUSTRIAL PIPELINE */}
@@ -184,26 +200,6 @@ export default function ProcessingPage() {
               </p>
             </div>
           </section>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ProcessImage({ src, label }: { src: string; label: string }) {
-  return (
-    <div className="group relative h-96 rounded-[3.5rem] overflow-hidden shadow-2xl border-4 border-white">
-      <img
-        src={src}
-        className="w-full h-full object-cover group-hover:scale-110 transition duration-1000"
-        alt={label}
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-10">
-        <div>
-          <div className="h-1 w-10 bg-[#BF9B30] mb-3"></div>
-          <p className="text-white font-black uppercase tracking-widest text-sm">
-            {label}
-          </p>
         </div>
       </div>
     </div>

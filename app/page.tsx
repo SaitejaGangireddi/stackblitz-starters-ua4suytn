@@ -82,10 +82,8 @@ const paddyItems = [
 ];
 
 const HERO_IMAGES = [
-  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1776595754/IMG_2293.jpg_upqoz4.jpg',
-  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1776595751/IMG_4139_id0qgu.jpg',
-  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1776595736/IMG_7492_srwues.jpg',
-  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1776595726/IMG_9040_cdjqaz.jpg',
+  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1788753954/Home_1_lqhwt7.png',
+  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1788753954/Home_2_imp5l9.png',
 ];
 
 export default function HomePage() {

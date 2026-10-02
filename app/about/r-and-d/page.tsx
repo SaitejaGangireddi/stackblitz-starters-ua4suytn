@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { Microscope, ShieldCheck, FlaskConical, Sprout } from 'lucide-react';
+import { Microscope, ShieldCheck } from 'lucide-react';
 
 const COLORS = {
   green: '#2B5A27',
@@ -10,12 +10,11 @@ const COLORS = {
 
 // 1. YOUR 5 SCROLLING IMAGES
 const RD_IMAGES = [
-  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1776603997/IMG_7192_qfvzx0.jpg',
-  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1776603993/IMG_9365_uee7og.jpg',
-  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1776603981/IMG_7111_qenlx4.jpg',
-  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1776603978/IMG_1235_jsnmqb.jpg',
-  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1776605870/IMG_7463_lxahdu.jpg',
-  ' https://res.cloudinary.com/dmkjnuolr/image/upload/q_auto/f_auto/v1776603968/IMG_0401_jax4nf.jpg',
+  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1788753976/R_and_D_1_bpa192.png',
+  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1788753976/R_and_D_2_nouw7t.png',
+  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1788753982/R_and_D_3_c2e1cw.png',
+  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1788753983/R_and_D_4_j4cad4.png',
+  'https://res.cloudinary.com/dmkjnuolr/image/upload/v1788753984/R_and_D_5_evc6xj.png',
 ];
 
 export default function RDPage() {
@@ -59,17 +58,38 @@ export default function RDPage() {
             <div>
               <h2
                 style={{ color: COLORS.green }}
-                className="text-4xl font-black uppercase tracking-tighter mb-6"
+                className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-8 leading-none"
               >
                 INNOVATION IN{' '}
                 <span style={{ color: COLORS.gold }}>EVERY GRAIN</span>
               </h2>
-              <p className="text-xl text-stone-600 leading-relaxed font-medium">
-                Annapurna Seeds takes pride in having its own Research &
-                Development center. This holistic approach allows us to maintain
-                complete control over quality, enabling continuous innovation
-                and improvement to meet market demands.
-              </p>
+
+              {/* CLEAN FORMATTED PARAGRAPH BREAKS */}
+              <div className="space-y-5 text-stone-600 font-medium text-base md:text-lg leading-relaxed">
+                <p className="border-l-4 pl-4 border-[#2B5A27]">
+                  Annapurna Seeds takes pride in having its own Research &
+                  Development center. This holistic approach allows us to maintain
+                  complete control over quality, enabling continuous innovation
+                  and improvement to meet market demands.
+                </p>
+
+                <p>
+                  Every year, hundreds of varieties and experimental lines are
+                  evaluated through systematic field testing. Our experienced
+                  breeders undertake selection, varietal crossing, and hybrid
+                  development, combining desirable traits from carefully selected
+                  genetic material to develop improved varieties and hybrids.
+                </p>
+
+                <p className="bg-white/80 p-6 rounded-3xl border border-stone-100 shadow-sm">
+                  Our research is driven by a combination of scientific evaluation,
+                  regional adaptability, and market understanding. We assess
+                  performance across different agro-climatic conditions and
+                  consider factors such as yield potential, quality, maturity,
+                  uniformity, resilience, and other traits relevant to farmers and
+                  the market.
+                </p>
+              </div>
             </div>
 
             {/* EXACT MATTER: MULTI-LOCATION */}

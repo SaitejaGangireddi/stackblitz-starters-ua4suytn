@@ -58,7 +58,7 @@ const vegetableItems: VegetableItem[] = [
     id: 7,
     type: 'HYBRID VEGETABLE',
     name: 'CLUSTERBEAN (ACS-901)',
-    image: 'https://res.cloudinary.com/dmkjnuolr/image/upload/v1783011405/cluster_bean_a3m7va.png',
+    image: 'https://res.cloudinary.com/dmkjnuolr/image/upload/v1788753953/clusterbean_-_vegetables_vbcflc.png',
     info: 'Bushy, erect plant with single stem growth | Early maturity cycle | Quick income crop with multiple harvests | Highly drought-tolerant crop suitable for arid and semi-arid regions'
   }
 ];
@@ -83,32 +83,35 @@ export default function VegetablesPage() {
         </h1>
       </div>
 
-      {/* Grid Layout conforming exactly to Paddy configuration */}
+      {/* Grid Layout conforming identically to Paddy (5 columns on desktop) */}
       <div className="max-w-7xl mx-auto px-6 -mt-12 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
           {vegetableItems.map((item) => (
             <div
               key={item.id}
               onClick={() => setActiveItem(item)}
-              className="cursor-pointer group relative bg-white p-6 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 border border-stone-100 flex flex-col items-center"
+              className="cursor-pointer group relative bg-white p-5 rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 border border-stone-100 flex flex-col items-center"
             >
-              <div className="h-44 w-full mb-4 flex items-center justify-center bg-stone-50 rounded-[2rem] group-hover:bg-white transition-colors">
+              {/* Image Frame - balanced height and object-contain */}
+              <div className="h-44 md:h-48 w-full mb-4 flex items-center justify-center bg-stone-50 rounded-[2rem] group-hover:bg-white transition-colors overflow-hidden p-2">
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="h-full w-full object-cover rounded-[1.8rem] transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
+
+              {/* Title & Metadata */}
               <div className="text-center w-full">
                 <span
                   style={{ color: COLORS.gold }}
-                  className="text-[10px] font-black uppercase tracking-widest block mb-1"
+                  className="text-[9px] font-black uppercase tracking-widest block mb-1"
                 >
                   {item.type}
                 </span>
                 <p
                   style={{ color: COLORS.green }}
-                  className="font-black text-[11px] leading-tight uppercase mb-2"
+                  className="font-black text-[11px] leading-tight uppercase mb-2 min-h-[28px] flex items-center justify-center"
                 >
                   {item.name}
                 </p>
@@ -116,7 +119,8 @@ export default function VegetablesPage() {
                   Sizes: 10g • 50g • 100g • 500g
                 </div>
               </div>
-              <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity bg-stone-50 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest text-[#BF9B30]">
+
+              <div className="mt-3 opacity-0 group-hover:opacity-100 transition-opacity bg-stone-50 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest text-[#BF9B30]">
                 View Specs
               </div>
             </div>
@@ -145,7 +149,7 @@ export default function VegetablesPage() {
               <img
                 src={activeItem.image}
                 alt={activeItem.name}
-                className="h-64 md:h-80 w-full object-cover rounded-[2.5rem] drop-shadow-xl"
+                className="h-64 md:h-80 w-full object-contain rounded-[2.5rem] drop-shadow-xl"
               />
               <div
                 style={{ backgroundColor: COLORS.gold }}
