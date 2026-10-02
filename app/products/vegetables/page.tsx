@@ -56,7 +56,7 @@ const vegetableItems: VegetableItem[] = [
   },
   {
     id: 7,
-    type: 'HYBRID VEGETABLE',
+    type: 'VEGETABLE',
     name: 'CLUSTERBEAN (ACS-901)',
     image: 'https://res.cloudinary.com/dmkjnuolr/image/upload/v1788753953/clusterbean_-_vegetables_vbcflc.png',
     info: 'Bushy, erect plant with single stem growth | Early maturity cycle | Quick income crop with multiple harvests | Highly drought-tolerant crop suitable for arid and semi-arid regions'
