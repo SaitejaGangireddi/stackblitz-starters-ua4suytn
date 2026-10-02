@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://stackblitz-starters-ua4suytn.vercel.app';
+  const baseUrl = 'https://www.annapurnaseedsandfarms.in/';
 
   return {
     rules: {

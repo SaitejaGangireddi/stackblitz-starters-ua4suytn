@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Replace with your custom domain once connected, or keep your Vercel URL
-  const baseUrl = 'https://stackblitz-starters-ua4suytn.vercel.app';
+  const baseUrl = 'https://www.annapurnaseedsandfarms.in/';
 
   return [
     {
